@@ -15,8 +15,6 @@ class Chat extends StatefulWidget {
 class _ChatState extends State<Chat> {
   final TextEditingController _messageController = TextEditingController();
 
-  List<Message> messages = [];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,10 +43,9 @@ class _ChatState extends State<Chat> {
         ),
         title: const ListTile(
           leading: CircleAvatar(
-            backgroundImage: NetworkImage(
-                'https://i.pinimg.com/280x280_RS/90/f3/fe/90f3fef49e2c82bc2f1dd605ae03d2d7.jpg'),
+            backgroundImage: AssetImage('assets/avatar.png'),
           ),
-          title: Text('Mi Padrino 🧠'),
+          title: Text('@mirrorme'),
           subtitle: Row(
             children: [
               Icon(
@@ -83,14 +80,12 @@ class _ChatState extends State<Chat> {
                 controller: _messageController,
                 onFieldSubmitted: (value) {
                   setState(() {
-                    var index = messages.length;
                     var newMessage = Message(
                         message: _messageController.value.text,
                         date: DateFormat.Hm('es_MX').format(DateTime.now()),
                         type: MessageType.sent);
                     messages.add(newMessage);
                     _messageController.clear();
-                    messages.add(receivedMessages[index]);
                   });
                 },
                 decoration: const InputDecoration(
@@ -110,15 +105,12 @@ class _ChatState extends State<Chat> {
                 color: Colors.white,
                 onPressed: () {
                   setState(() {
-                    var index = messages.length;
                     var newMessage = Message(
                         message: _messageController.value.text,
                         date: DateFormat.Hm('es_MX').format(DateTime.now()),
                         type: MessageType.sent);
                     messages.add(newMessage);
                     _messageController.clear();
-
-                    messages.add(receivedMessages[index]);
                   });
                 },
                 icon: const Icon(Icons.send),

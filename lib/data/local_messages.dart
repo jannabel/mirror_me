@@ -3,27 +3,37 @@ import 'package:talk_to_me/models/message_model.dart';
 
 //ESTOS SON LOS MENSAJES DE LA IA
 //SIEMPRE DEJA UN MENSAJE ADICIONAL AL FINAL PORQUE EPLOTA :)
-List<Message> receivedMessages = [
-  Message(
-      message: '¡Hola! ¿Cómo estás?',
-      date: DateFormat.Hm('es_MX').format(DateTime.now()),
-      type: MessageType.received),
-  Message(
-      message: 'Claro, dime cuál es el problema y veré cómo puedo ayudarte.',
-      date: DateFormat.Hm('es_MX').format(DateTime.now()),
-      type: MessageType.received),
+List<Message> messages = [
   Message(
       message:
-          'Lamento escuchar eso. Las situaciones familiares pueden ser muy difíciles y afectar muchos aspectos de nuestra vida. ¿Hay algo específico en lo que te gustaría ayuda o algún consejo que necesites?',
+          'Buenas tardes. Para comenzar, piensa en un recuerdo reciente que te haya dejado una impresión fuerte. Por favor, descríbeme ese recuerdo y qué sensaciones experimentas al pensar en él.',
       date: DateFormat.Hm('es_MX').format(DateTime.now()),
       type: MessageType.received),
+  Message(
+      message: 'Recuerdo un fin de semana que fui a la playa.',
+      date: DateFormat.Hm('es_MX').format(DateTime.now()),
+      type: MessageType.sent),
   Message(
       message:
-          'Por supuesto, aquí estoy para escucharte. Cuéntame más sobre lo que estás pasando.',
+          'Perfecto. Ahora vamos a descomponer esta experiencia en sus componentes más simples para entender mejor tu recuerdo. Sensación física: ¿Qué sensaciones físicas específicas experimentaste durante ese fin de semana en la playa?',
       date: DateFormat.Hm('es_MX').format(DateTime.now()),
       type: MessageType.received),
   Message(
-      message: 'NO ME IMPORTA 🐀',
+      message: 'El sol, la arena, el agua tibia, alegría',
+      date: DateFormat.Hm('es_MX').format(DateTime.now()),
+      type: MessageType.sent),
+  Message(
+      message:
+          'Excelente. Vamos a analizar cada uno de estos elementos: El sol: ¿Cómo describirías la sensación del sol en tu piel durante ese fin de semana en la playa?',
+      date: DateFormat.Hm('es_MX').format(DateTime.now()),
+      type: MessageType.received),
+  Message(
+      message: 'Cálido y reconfortante',
+      date: DateFormat.Hm('es_MX').format(DateTime.now()),
+      type: MessageType.sent),
+  Message(
+      message:
+          'Entiendo. Ahora vamos al siguiente elemento: La arena: ¿Qué sensaciones experimentaste al caminar sobre la arena durante ese fin de semana en la playa?',
       date: DateFormat.Hm('es_MX').format(DateTime.now()),
       type: MessageType.received),
 ];

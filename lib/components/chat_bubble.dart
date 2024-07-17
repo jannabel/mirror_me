@@ -39,6 +39,7 @@ Widget ChatBubble({
             children: [
               Text(
                 message.message,
+                textAlign: TextAlign.justify,
                 style: TextStyle(
                     color: message.type == MessageType.sent
                         ? Colors.white
